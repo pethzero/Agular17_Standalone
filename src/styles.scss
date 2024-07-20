@@ -25,9 +25,9 @@ $AgularDjango-theme: mat.define-light-theme((
 // @use  '~@nebular/theme/styles/themes/dark';
 
 // Tailwind CSS
-// @import 'tailwindcss/base';
-// @import 'tailwindcss/components';
-// @import 'tailwindcss/utilities';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 // Global Styles
 * {
