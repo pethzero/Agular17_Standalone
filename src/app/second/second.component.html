@@ -1,0 +1,48 @@
+<div class="container">
+<div class="col-sm-8">
+    <p style="color:#FF0000;font-size:12px">ระบุ Supplier Name ที่ต้องการให้เห็นข้อมูล
+        (เว้นว่างไว้คือสามารถเห็นได้ทั้งหมด)</p>
+    <span>
+        <button class="btn btn-sm btn-info" (click)="selItem.impvendors.push({value: ''})">Add</button>
+    </span>
+
+
+    <div class="row" *ngFor="let el of selItem.impvendors; let i = index">
+        <div class="col-sm-8">
+            <ng-select     style="width: 500px !important;" [(ngModel)]="el.value" [items]="impvendors" bindLabel="shortname"
+                bindValue="id" [virtualScroll]="true" appendTo="body"> 
+            </ng-select>
+<!-- 
+            <select class="form-control" [(ngModel)]="el.value">
+                <option *ngFor="let item of impvendors" [value]="item.id">{{item.shortname}}</option>
+            </select> -->
+        </div>
+        <div class="col-sm-4">
+            <button class="btn btn-xs btn-danger" (click)="deleteConf('impvendors', i)">
+                <i class="nb-trash" style="font-size:xx-large;color: white" title="delete the item"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <button class="btn btn-info btn-sm" (click)="addItem()">Add</button>
+    <button class="btn btn-info btn-sm" (click)="Test()">Check</button>
+    <div *ngFor="let item of tb_data; let i = index" class="row mb-2">
+      <div class="col-sm-8">
+        <ng-select [(ngModel)]="item.data"
+                    style="width: 500px !important;"
+                   dropdownPosition="bottom"
+                   [virtualScroll]="true">
+          <ng-option *ngFor="let item of filter_user" [value]="item.value">
+            {{ item.value + ' ' + item.textx }}
+          </ng-option>
+        </ng-select>
+      </div>
+      <div class="col-sm-4">
+        <button class="btn btn-danger btn-sm" (click)="deleteItem(i)">Delete</button>
+      </div>
+    </div>
+</div>
+  

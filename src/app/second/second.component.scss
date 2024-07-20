@@ -1,0 +1,60 @@
+.container {
+    padding: 20px;
+  
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+  
+    ng-select {
+      width: 100%;
+      border: 1px solid black; // เพิ่มขอบสีดำ
+      border-radius: 4px; // เพิ่มความโค้งให้กับขอบ
+  
+      // เพิ่ม z-index เพื่อให้แน่ใจว่า ng-select อยู่ด้านบน
+      .ng-select-container {
+        z-index: 1050; // ค่าตัวอย่าง; เพิ่มหรือเปลี่ยนตามความต้องการ
+      }
+  
+      .ng-dropdown-panel {
+        z-index: 1050; // ค่าเดียวกับ ng-select-container หรือค่าที่สูงกว่า
+      }
+    }
+  
+    .btn {
+      margin-left: 10px;
+  
+      &.btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        border-radius: 0.2rem;
+      }
+  
+      &.btn-info {
+        color: #fff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+  
+        &:hover {
+          color: #fff;
+          background-color: #138496;
+          border-color: #117a8b;
+        }
+      }
+  
+      &.btn-danger {
+        color: #fff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+  
+        &:hover {
+          color: #fff;
+          background-color: #c82333;
+          border-color: #bd2130;
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,24 @@
+
+FROM node:alpine
+
+# ติดตั้ง Angular CLI โดยใช้ npm
+RUN npm install -g @angular/cli
+
+# ตั้งค่าโฟลเดอร์ที่จะทำงานใน container
+WORKDIR /app
+
+# คัดลอก package.json และ package-lock.json และทำการติดตั้ง dependencies
+COPY package*.json ./
+RUN npm install
+
+# คัดลอกโค้ดของโปรเจกต์ Angular ไปยัง container
+COPY . .
+
+# สร้าง build ของ Angular application
+RUN ng build --prod
+
+# โปรดระบุเซิร์ฟเวอร์ HTTP ที่ Angular application ทำงานอยู่ (โปรดเปลี่ยนเป็นของคุณ)
+EXPOSE 4200
+
+# รัน Angular application ด้วย ng serve หรือเซิร์ฟเวอร์ที่คุณใช้
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]

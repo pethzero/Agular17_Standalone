@@ -1,0 +1,59 @@
+
+// กำหนดตัวแปร
+$results-column-gap: 14px;
+$results-row-gap: 14px;
+$results-margin-top: 50px;
+
+$primary-color: #605DC8;
+$secondary-color: #8B89E6;
+$accent-color: #e8e7fa;
+$shadow-color: #E8E8E8;
+// $primary-color: var(--primary-color); // สมมติว่ามีการกำหนดตัวแปร primary-color
+// $primary-color: purple;
+// $primary-color-button: purple;
+// การใช้งาน SCSS
+section {
+  form {
+    input[type="text"] {
+      border: solid 1px $primary-color;
+      padding: 10px;
+      border-radius: 8px;
+      margin-right: 4px;
+      display: inline-block;
+      width: 30%;
+    }
+
+    button {
+      padding: 10px;
+      border: solid 1px $primary-color;
+      background: $primary-color;
+      color: white;
+      border-radius: 8px;
+    }
+  }
+}
+
+.results {
+  display: grid;
+  column-gap: $results-column-gap;
+  row-gap: $results-row-gap;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+  margin-top: $results-margin-top;
+  justify-content: space-around;
+
+  @media (min-width: 500px) and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    input[type="text"] {
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 499px) {
+    grid-template-columns: 1fr;
+
+    input[type="text"] {
+      width: 100%;
+    }
+  }
+}
