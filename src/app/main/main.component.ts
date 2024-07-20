@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +8,6 @@ import { HomeComponent } from '../home/home.component';
   imports: [
     CommonModule,
     RouterOutlet,
-    HomeComponent,
   ],
   template: `
     <router-outlet></router-outlet>

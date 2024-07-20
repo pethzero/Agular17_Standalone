@@ -2,8 +2,8 @@ import { Component,Input,inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { HousingLocation } from '../center_data/housinglocation';
-import { HousingService } from '../center_data/housing.service';
+import { HousingLocation } from '../../../center_data/housinglocation';
+import { HousingService } from '../../../center_data/housing.service';
 import { Router, RouterModule } from '@angular/router';
 
 

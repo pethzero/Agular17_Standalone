@@ -16,7 +16,7 @@ export const dataRoutesB: Routes = [
   { path: 'bbb', component: DataAComponent },
 ];
 
-export class DataModule {
+export class DataRouting {
   static routes = {
     dataRoutes,
     dataRoutesA,
