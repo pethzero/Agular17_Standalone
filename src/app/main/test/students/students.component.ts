@@ -62,7 +62,7 @@ export class StudentsComponent {
         this.error = 'Failed to fetch data'; // Handle the error
         console.error('Failed to fetch data', err);
       }
-    });; // Call the fetchStudents method on initialization
+    }); // Call the fetchStudents method on initialization
   }
 
   // getStudentObservable(mode =0,data=null): Observable<any> {

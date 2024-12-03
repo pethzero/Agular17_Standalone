@@ -114,7 +114,6 @@ export class ApiService {
   
   SystemCreateSQL(data: any, queryid: any): Observable<any> {
     const apiUrl = this.coreService.QuerySearch(queryid);
-
     if (apiUrl) {
       return this.http.post<any>(apiUrl, data, this.httpOptions).pipe(
         catchError(this.handleErrorLog)
@@ -152,6 +151,19 @@ SystemUpdateSQL(id: number, data: any,queryid:any): Observable<any> {
     throw new Error('API URL not found for the provided data.');
   }
 }
+
+
+sys_api_upload(data: any): Observable<any> {
+  const apiUrl = 'http://127.0.0.1:8000/myapp/upload/' ;
+  if (apiUrl) {
+    return this.http.post<any>(apiUrl, data, this.httpOptions).pipe(
+      catchError(this.handleErrorLog)
+    );
+  } else {
+    return observableThrowError(() => new Error('API URL not found for the provided data.'));
+  }
+}
+
 
 
 }

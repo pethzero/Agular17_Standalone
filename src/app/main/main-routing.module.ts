@@ -32,6 +32,6 @@ export const mainRoutes: Routes = [
   {
     path: 'api-test',
     component: DynamicContentComponent,
-    children: DataTableRouting.routes.dataRoutes
+    children: DataAPIRouting.routes.dataRoutes
   },
 ];

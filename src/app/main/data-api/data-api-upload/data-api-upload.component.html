@@ -1,0 +1,17 @@
+<div class="file-upload-container">
+    <label for="fileInput1" class="file-label">
+        Example Single
+    </label>
+    <input type="file" id="fileInput1" #fileInput1 class="file-input" (change)="handleFileInput($event, 1)" accept="image/jpeg,image/png" />
+    <button class="file-button" (click)="checkFile(1)">CHECK</button>
+</div>
+
+<hr class="divider">
+
+<div class="file-upload-container">
+    <label for="fileInput2" class="file-label">
+        Example Multiple
+    </label>
+    <input type="file" id="fileInput2" #fileInput2 class="file-input" (change)="handleFileInput($event, 2)" multiple accept="image/jpeg,image/png,application/pdf" />
+    <button class="file-button" (click)="checkFile(2)">CHECK</button>
+</div>

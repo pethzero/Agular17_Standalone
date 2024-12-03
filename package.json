@@ -23,7 +23,7 @@
     "@ng-select/ng-select": "^13.4.1",
     "angular-datatables": "^18.0.0",
     "rxjs": "~7.8.0",
-    "sweetalert2": "^11.10.7",
+    "sweetalert2": "^11.14.5",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

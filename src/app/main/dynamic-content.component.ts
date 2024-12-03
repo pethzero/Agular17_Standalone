@@ -38,7 +38,7 @@ export class DynamicContentComponent implements OnInit {
         this.logo = config.logo;
       } else {
         this.routes = [];
-        this.title = 'Default Title';
+        this.title = '';
         this.logo = 'default-logo.png';
       }
     });

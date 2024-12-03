@@ -95,6 +95,7 @@ import { Router, RouterOutlet, RouterLink, RouterLinkActive } from '@angular/rou
               <li><a routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="['/api-test/none']" class="block px-4 py-2">None</a></li>
               <li><a routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="['/api-test/api']" class="block px-4 py-2">API</a></li>
               <li><a routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="['/api-test/pivot']" class="block px-4 py-2">Pivot</a></li>
+              <li><a routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="['/api-test/upload']" class="block px-4 py-2">Upload</a></li>
             </ul>
               </li>
               </ul>
