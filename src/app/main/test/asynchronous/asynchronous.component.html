@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>Asynchronous Processing</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th align="left">Operation</th>
+        <th align="left">Observable</th>
+        <th align="left">Promise</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="left">Creation</td>
+        <td align="left">
+          <pre><code>{{ observableCreation }}</code></pre>
+          <div>Observable Data: {{ observableData }}</div>
+        </td>
+        <td align="left">
+          <pre><code>{{ promiseCreation }}</code></pre>
+          <div>Promise Data: {{ promiseData }}</div>
+        </td>
+      </tr>
+      <tr>
+        <td align="left">Transform</td>
+        <td align="left">
+          <pre><code>{{ observableTransformation }}</code></pre>
+          <div>Transformed Observable Data: {{ observableTransformedData }}</div>
+        </td>
+        <td align="left">
+          <pre><code>{{ promiseTransformation }}</code></pre>
+          <div>Transformed Promise Data: {{ promiseTransformedData }}</div>
+        </td>
+      </tr>
+      <tr>
+        <td align="left">Subscribe</td>
+        <td align="left">
+          <pre><code>{{ observableSubscriptionCode }}</code></pre>
+        </td>
+        <td align="left">
+          <pre><code>{{ promiseSubscriptionCode }}</code></pre>
+        </td>
+      </tr>
+      <tr>
+        <td align="left">Unsubscribe</td>
+        <td align="left">
+          <pre><code>{{ observableUnsubscription }}</code></pre>
+        </td>
+        <td align="left">
+          <pre><code>{{ promiseUnsubscription }}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,114 @@
+<div class="pl-6 pr-6">
+    <h2 class="text-2xl font-bold mb-4">ตารางนักเรียน</h2>
+    
+    <div class="mb-4 w-1/2">
+        <label for="studentName" class="block text-gray-700">Check:</label>
+        <button  (click)="checkData()"class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-1/4">Check Table</button>
+    </div>
+
+    <table class="w-full border-collapse border border-gray-200">
+        <thead>
+            <tr>
+                <th class="py-3 px-6 bg-gray-100 border border-slate-300 border-b border-gray-200" style="width: 5%;">No.</th>
+                <th class="py-3 px-6 bg-gray-100 border border-slate-300 border-b border-gray-200" style="width: 5%;">ID</th>
+                <th class="py-3 px-6 bg-gray-100 border border-slate-300 border-b border-gray-200" style="width: 25%;">ชื่อ</th>
+                <th class="py-3 px-6 bg-gray-100 border border-slate-300 border-b border-gray-200">รายละเอียด</th>
+                <th class="py-3 px-6 bg-gray-100 border border-slate-300 border-b border-gray-200" style="width: 12%;">Actions</th>
+                <th class="py-3 px-6 bg-gray-100 border border-slate-300 border-b border-gray-200" style="width: 5%;">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let student of list_student;" class="hover:bg-gray-100">
+                <td class="py-4 px-6 border border-slate-300 border-b border-gray-200">{{ student.id }}</td>
+
+                <ng-container *ngIf="!student.editing; else editModename">
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">{{ student.name }}</td>
+                </ng-container>
+                <ng-template #editModename>
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                        <input class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500" type="text" [(ngModel)]="student.name">
+                    </td>
+                </ng-template>
+
+                <ng-container *ngIf="!student.editing; else editModeDetail">
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">{{ student.detail }}</td>
+                </ng-container>
+                <ng-template #editModeDetail>
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                        <input class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500" type="text" [(ngModel)]="student.detail">
+                    </td>
+                </ng-template>
+
+                <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                    <ng-container *ngIf="!student.editing; else editingMode">
+                        <button class="bg-blue-500 hover:bg-blue-500 text-white font-bold py-2 px-5 rounded" (click)="changemodeAction(student)">Edit</button>
+                    </ng-container>
+                    <ng-template #editingMode>
+                        <button class="bg-green-600 hover:bg-green-600 text-white font-bold py-2 px-5 rounded mr-2" (click)="updateAction(student)">Save</button>
+                        <button class="bg-yellow-500 hover:bg-yellow-500 text-white font-bold py-2 px-5 rounded" (click)="cancelAction(student)">Cancel</button>
+                    </ng-template>
+                </td>
+                <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" (click)="deleteAction(student)">
+                        Delete
+                    </button>
+                </td>
+            </tr> -->
+            <tr *ngFor="let student of list_student;let i = index" class="hover:bg-gray-100">
+                <td class="py-4 px-6 border border-slate-300 border-b border-gray-200">{{ i+1 }}</td>
+                <td class="py-4 px-6 border border-slate-300 border-b border-gray-200">{{ student.id }}</td>
+
+                <ng-container *ngIf="!student.editing; else editModename">
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">{{ student.name }}</td>
+                </ng-container>
+                <ng-template #editModename>
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                        <input class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500" type="text" [(ngModel)]="student.name">
+                    </td>
+                </ng-template>
+
+                <ng-container *ngIf="!student.editing; else editModeDetail">
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">{{ student.detail }}</td>
+                </ng-container>
+                <ng-template #editModeDetail>
+                    <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                        <input class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500" type="text" [(ngModel)]="student.detail">
+                    </td>
+                </ng-template>
+
+                <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                    <ng-container *ngIf="!student.editing; else editingMode">
+                        <button class="bg-blue-500 hover:bg-blue-500 text-white font-bold py-2 px-5 rounded" (click)="changemodeAction(student)">Edit</button>
+                    </ng-container>
+                    <ng-template #editingMode>
+                        <button class="bg-green-600 hover:bg-green-600 text-white font-bold py-2 px-5 rounded mr-2" (click)="updateAction(student)">Save</button>
+                        <button class="bg-yellow-500 hover:bg-yellow-500 text-white font-bold py-2 px-5 rounded" (click)="cancelAction(student)">Cancel</button>
+                    </ng-template>
+                </td>
+                <td class="py-2 px-6 border border-slate-300 border-b border-gray-200">
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" (click)="deleteActionNew(i)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mt-5">
+        <!-- <form (ngSubmit)="addStudent()" autocomplete="off" class="w-full"> -->
+        <form (ngSubmit)="addStudentNew()" autocomplete="off" class="w-full">
+            <h2 class="text-xl font-bold mb-4">Add New Student</h2>
+            <div class="mb-4 w-1/2">
+                <label for="studentName" class="block text-gray-700">Name:</label>
+                <input type="text" id="studentName" [(ngModel)]="newStudent.name" name="studentName" required class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500">
+            </div>
+
+            <div class="mb-4 w-1/2">
+                <label for="studentDetail" class="block text-gray-700">Detail:</label>
+                <input type="text" id="studentDetail" [(ngModel)]="newStudent.detail" name="studentDetail" required class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500">
+            </div>
+
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-1/4">Add Student</button>
+        </form>
+    </div>
+</div>

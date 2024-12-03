@@ -1,0 +1,119 @@
+/* Table Container */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders are collapsed into a single line */
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+  
+    /* Table Header Styling */
+    thead {
+      background-color: #4CAF50;
+      color: white;
+  
+      th {
+        padding: 12px 15px;
+        text-align: left;
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  
+    /* Table Body Styling */
+    tbody {
+      tr {
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #f1f1f1;
+        }
+  
+        td {
+          padding: 10px 15px;
+          text-align: left;
+          font-size: 13px;
+          border-bottom: 1px solid #ddd;
+  
+          &:last-child {
+            border-right: none; /* No right border on the last column */
+          }
+        }
+      }
+    }
+  
+    /* Pivot View */
+    .pivot-view {
+      td, th {
+        padding: 12px;
+        text-align: center;
+      }
+    }
+  
+    /* For Responsive Design */
+    @media screen and (max-width: 768px) {
+      table {
+        font-size: 12px;
+  
+        thead {
+          font-size: 13px;
+        }
+  
+        td, th {
+          padding: 8px 10px;
+        }
+  
+        /* Stack columns for smaller screens (mobile view) */
+        tbody tr {
+          display: block;
+          margin-bottom: 10px;
+  
+          td {
+            display: block;
+            text-align: right;
+            position: relative;
+            padding-left: 50%;
+            border-bottom: 0; /* Remove borders for stacked layout */
+          }
+  
+          td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  
+    /* For Pivot View */
+    .pivot-view {
+      th {
+        text-align: center;
+      }
+  
+      td {
+        text-align: center;
+        padding: 12px;
+      }
+    }
+  }
+  
+  /* Button styling for table toggle */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  
+    &:hover {
+      background-color: #45a049;
+    }
+  }
+  
+  

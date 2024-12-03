@@ -11,7 +11,7 @@ import { MENU_CONFIG, MenuConfigKey } from './dynamic-content.config'; // Import
   imports: [CommonModule, RouterLink, RouterOutlet],
   template: `
     <h1>{{ title }}</h1>
-    <img [src]="logo" alt="logo" />
+    <!-- <img [src]="logo" alt="logo" /> -->
     <section>
       <div *ngFor="let route of routes">
         <h3><a [routerLink]="route.path">{{ route.path }}</a></h3> 

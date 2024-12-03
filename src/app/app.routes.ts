@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { FirstComponent } from './first/first.component';
-import { SecondComponent } from './second/second.component';
-import { StudentsComponent } from './students/students.component';
-import { DetailsComponent } from './details/details.component';
+import { FirstComponent } from './main/test/first/first.component';
+import { SecondComponent } from './main/test/second/second.component';
+import { StudentsComponent } from './main/test/students/students.component';
+import { DetailsComponent } from './main/home/details/details.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AsynchronousComponent  } from './main/test/asynchronous/asynchronous.component';
 
 const routeConfig: Routes = [
   {
@@ -30,6 +31,11 @@ const routeConfig: Routes = [
     path: 'select',
     component: DetailsComponent,
     title: 'Home details'
+  },
+  {
+    path: 'asynchronous',
+    component: AsynchronousComponent,
+    title: 'Asyc'
   },
   {
     path: '',

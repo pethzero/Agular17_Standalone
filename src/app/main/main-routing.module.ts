@@ -4,6 +4,7 @@ import { DataRouting } from './data/data.module';
 import { HomeRouting } from './home/home.module';
 import { MainComponent } from './main.component';
 import { DynamicContentComponent } from './dynamic-content.component';
+import { DataAPIRouting } from './data-api/data-api.module';
 
 export const mainRoutes: Routes = [
   // { path: '', pathMatch: 'full', component: HomeComponent },
@@ -27,5 +28,10 @@ export const mainRoutes: Routes = [
     path: 'home',
     component: DynamicContentComponent,
     children: HomeRouting.routes.dataRoutes
-  }
+  },
+  {
+    path: 'api-test',
+    component: DynamicContentComponent,
+    children: DataTableRouting.routes.dataRoutes
+  },
 ];

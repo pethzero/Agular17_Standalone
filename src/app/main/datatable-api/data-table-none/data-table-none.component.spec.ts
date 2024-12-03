@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataComponent } from './data.component';
+import { DataTableNoneComponent } from './data-table-none.component';
 
-describe('DataComponent', () => {
-  let component: DataComponent;
-  let fixture: ComponentFixture<DataComponent>;
+describe('DataTableNoneComponent', () => {
+  let component: DataTableNoneComponent;
+  let fixture: ComponentFixture<DataTableNoneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DataComponent]
+      imports: [DataTableNoneComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(DataComponent);
+
+    fixture = TestBed.createComponent(DataTableNoneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

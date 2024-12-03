@@ -15,6 +15,7 @@
     <table class="w-full border-collapse border border-gray-200">
         <thead>
             <tr>
+                <th class="py-3 px-6 bg-gray-100  border border-slate-300 border-b border-gray-200" style="width: 5%;">No.</th>
                 <th class="py-3 px-6 bg-gray-100  border border-slate-300 border-b border-gray-200" style="width: 5%;">ID</th>
                 <th class="py-3 px-6 bg-gray-100  border border-slate-300 border-b border-gray-200" style="width: 25%;">ชื่่อ</th>
                 <th class="py-3 px-6 bg-gray-100  border border-slate-300 border-b border-gray-200">รายละเอียด</th>
@@ -23,7 +24,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let student of list_student; trackBy: trackByData" class="hover:bg-gray-100 ">
+            <tr *ngFor="let student of list_student;let i = index" class="hover:bg-gray-100 ">
+                <td class="py-4 px-6 border border-slate-300 border-b border-gray-200">{{ i+1 }}</td>
                 <td class="py-4 px-6 border border-slate-300 border-b border-gray-200">{{ student.id }}</td>
 
                 <ng-container *ngIf="!student.editing; else editModename">
@@ -84,16 +86,8 @@
                 <input type="text" id="studentDeatil" [(ngModel)]="data_detail" name="studentDeatil" required
                  class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500">
             </div>
-
-            <!-- <div class="mb-4 w-1/2">
-                <label for="studentScore" class="block text-gray-700">Score:</label>
-                <input type="number" id="studentScore" [(ngModel)]="data_detail" name="studentScore" required
-                    class="mt-1 px-4 py-2 w-full border rounded-lg focus:outline-none focus:border-blue-500">
-            </div> -->
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-1/4">Add Student</button>
         </form>
     </div>
-    
     <br>
-        
 </div>
