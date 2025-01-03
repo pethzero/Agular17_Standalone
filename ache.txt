@@ -1,0 +1,11 @@
+ตั้งค่าไฟล์ .htaccess (สำคัญสำหรับ Angular SPA)
+Angular ใช้การนำทางแบบ HTML5 routing ดังนั้นต้องเพิ่มไฟล์ .htaccess ใน Document Root เพื่อรองรับการรีไดเรกต์:
+บน Windows (XAMPP): C:\xampp\htdocs\
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+</IfModule>

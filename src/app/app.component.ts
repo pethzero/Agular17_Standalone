@@ -85,7 +85,7 @@ import { Router, RouterOutlet, RouterLink, RouterLinkActive } from '@angular/rou
             <li><a routerLink="/second-component" routerLinkActive="active" ariaCurrentWhenActive="page">ทดสอบไปหน้า 2</a></li>
           </ul>
         </nav> -->
-        <nav>
+      <nav>
         <ul class="home flex space-x-4">
           <li><a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a></li>
           <li><a routerLink="/students" routerLinkActive="active" ariaCurrentWhenActive="page">Example</a></li>
@@ -97,9 +97,15 @@ import { Router, RouterOutlet, RouterLink, RouterLinkActive } from '@angular/rou
               <li><a routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="['/api-test/pivot']" class="block px-4 py-2">Pivot</a></li>
               <li><a routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="['/api-test/upload']" class="block px-4 py-2">Upload</a></li>
             </ul>
-              </li>
-              </ul>
-          </nav>
+          </li>
+          <li class="relative group">
+            <a class="cursor-pointer">TEST</a>
+            <ul class="absolute hidden group-hover:block bg-white shadow-lg">
+              <li><a routerLinkActive="active" ariaCurrentWhenActive="page" [routerLink]="['/test/example-date']" class="block px-4 py-2">Date</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
         <br>
         <router-outlet></router-outlet>
       </section>

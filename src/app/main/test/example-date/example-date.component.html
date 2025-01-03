@@ -1,0 +1,52 @@
+<div class="date-container">
+  <h1>Date Formatter Example</h1>
+
+  <!-- Date Input -->
+  <div class="form-group">
+    <label for="dateInput">Enter Date (YYYY-MM-DD or DD/MM/YYYY):</label>
+    <input
+      id="dateInput"
+      type="text"
+      [(ngModel)]="input_formattedDate"
+      (input)="updateFormattedDate()"
+      placeholder="Enter date (e.g., 28/12/2024)"
+    />
+    <p *ngIf="check_date === false" class="error-text">Invalid date format. Please check the format!</p>
+  </div>
+
+  <!-- Time Input -->
+  <div class="form-group">
+    <label for="timeInput">Enter Time (HH:mm):</label>
+    <input
+      id="timeInput"
+      type="time"
+      [(ngModel)]="input_formattedTime"
+      (input)="updateFormattedTime($event)"
+    />
+    <p *ngIf="out_formattedTime === 'Invalid Time'" class="error-text">Invalid time format. Please enter a valid time.</p>
+  </div>
+
+  <!-- Display Mode Selection -->
+  <div class="form-group">
+    <label for="displayMode">Select Display Mode:</label>
+    <select id="displayMode" [(ngModel)]="dateDisplayMode" (change)="changeDisplayMode($event)">
+      <option *ngFor="let format of commonFormats" [value]="format">
+        {{ format }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Buttons -->
+  <div class="form-group">
+    <!-- <button class="btn combine" (click)="combineDateTime()">Combine</button> -->
+    <button class="btn update" (click)="updateCurrentDateTime()">Update Current Date/Time</button>
+  </div>
+
+  <!-- Current Date and Time -->
+  <p><strong>Current Date and Time:</strong> {{ currentDateTime }}</p>
+
+  <!-- Results -->
+  <p><strong>Formatted Date:</strong> {{ out_formattedDate || 'Not Set' }}</p>
+  <p><strong>Formatted Time:</strong> {{ out_formattedTime || 'Not Set' }}</p>
+  <p><strong>Formatted DateTime:</strong> {{formatDisplayTime()  }}</p>
+</div>

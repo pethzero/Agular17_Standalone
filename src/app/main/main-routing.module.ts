@@ -5,9 +5,9 @@ import { HomeRouting } from './home/home.module';
 import { MainComponent } from './main.component';
 import { DynamicContentComponent } from './dynamic-content.component';
 import { DataAPIRouting } from './data-api/data-api.module';
+import { TestRouting } from './test/test.module';
 
 export const mainRoutes: Routes = [
-  // { path: '', pathMatch: 'full', component: HomeComponent },
   { path: '', pathMatch: 'full', component: MainComponent },
   {
     path: 'data',
@@ -34,4 +34,10 @@ export const mainRoutes: Routes = [
     component: DynamicContentComponent,
     children: DataAPIRouting.routes.dataRoutes
   },
+  {
+    path: 'test',
+    component: DynamicContentComponent,
+    children: TestRouting.routes.dataRoutes
+  },
+  
 ];

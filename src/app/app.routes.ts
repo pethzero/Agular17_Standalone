@@ -41,9 +41,6 @@ const routeConfig: Routes = [
     path: '',
     loadChildren: () => import('./main/main-routing.module').then(m => m.mainRoutes) // ตรวจสอบว่า mainRoutes ถูกตั้งชื่อถูกต้อง
   },
-  // { path: '', pathMatch: 'full', component: HomeComponent },
-  // {path: 'main', loadChildren: () => import('./main/main-routing.module').then(m => m.mainRoutes) },
-  //  { path: '', pathMatch: 'full', component: HomeComponent },
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent }
 ];
 
